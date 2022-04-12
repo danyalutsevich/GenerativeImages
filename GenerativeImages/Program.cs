@@ -1,10 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.IO.Compression;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Drawing;
-
+using System.Threading;
+using System.Diagnostics;
 
 namespace GenerativeImages
 {
@@ -13,20 +15,23 @@ namespace GenerativeImages
         public List<List<string>> imagesPaths;
         public Random random;
         public string CurrentDir;
+        private SemaphoreSlim semaphore;
 
         public Program()
         {
             imagesPaths = new List<List<string>>();
             random = new Random();
             CurrentDir = Directory.GetCurrentDirectory();
+            semaphore = new SemaphoreSlim(1);
         }
 
         static async Task Main()
         {
             var GenIm = new Program();
 
-            GenIm.GenerateImagesPaths(10000);
-            GenIm.GenerateImages();
+            GenIm.GenerateImagesPaths(1000);
+            await GenIm.GenerateImages();
+            GenIm.ArciveImages();
 
         }
 
@@ -81,12 +86,28 @@ namespace GenerativeImages
 
         }
 
-        private void GenerateImages()
+        private async Task GenerateImages()
         {
             Console.Write("Generating images: ");
 
-            int imageName = 0;
+            List<Task> tasks = new List<Task>();
+
             foreach (var l in imagesPaths)
+            {
+                tasks.Add(GenerateImage(l));
+            }
+
+            Task.WaitAll(tasks.ToArray());
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Done");
+            Console.ResetColor();
+        }
+
+        int imageName = 0;
+        private async Task GenerateImage(List<string> l)
+        {
+            await Task.Run(() =>
             {
                 Bitmap bmp = new Bitmap(l[0]);
 
@@ -108,12 +129,30 @@ namespace GenerativeImages
 
                 }
 
+                semaphore.Wait();
                 imageName++;
                 bmp.Save($"{CurrentDir}\\Output\\{imageName}.png");
-            }
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Done");
-            Console.ResetColor();
+                semaphore.Release();
+
+            });
+        }
+
+        private void ArciveImages()
+        {
+            int prefix = 0;
+
+            do
+            {
+                try
+                {
+                    ZipFile.CreateFromDirectory(CurrentDir + "\\Output", $"Output{prefix}.zip", CompressionLevel.Optimal, false);
+                    break;
+                }
+                catch
+                {
+                    prefix++;
+                }
+            } while (true);
         }
     }
 }
