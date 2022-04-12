@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "rIg1RRi8h7VYeEDiSJxpYyJVziaiiI/hozAlBZMjaxSkrvg5vLozGMyuk6OrIgDfGKB1RmeAY3aOH3NJt926Zw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\luche\\source\\repos\\C#\\GenerativeImages\\GenerativeImages\\GenerativeImages.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\luche\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
