@@ -40,9 +40,21 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "ILGPU": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "ILGPU.Algorithms": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "MathNet.Numerics": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             },
             "System.Drawing.Common": {
               "target": "Package",

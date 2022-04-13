@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "WanO5PPyichPOdDVW4SQrqaAS1xfWUVCKESQ7bo9nzN6WqCb4p8cZWML8ihRwEamE4tJZFS4Fyu3EH8Kw6UDpQ==",
+  "dgSpecHash": "wrlFL7KRQYxby8yt3XxQiVOSmctWbx2rIILKj0bN6yL3pi0CLWjOIW1Vb48iX+z5n8bhS6PNH9D84oGIKEt//Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\luche\\source\\repos\\C#\\GenerativeImages\\GenerativeImages\\GenerativeImages.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\luche\\.nuget\\packages\\ilgpu\\1.1.0\\ilgpu.1.1.0.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\ilgpu.algorithms\\1.1.0\\ilgpu.algorithms.1.1.0.nupkg.sha512",
     "C:\\Users\\luche\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\luche\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\luche\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+    "C:\\Users\\luche\\.nuget\\packages\\sixlabors.imagesharp\\2.1.0\\sixlabors.imagesharp.2.1.0.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\system.reflection.metadata\\6.0.1\\system.reflection.metadata.6.0.1.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\luche\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

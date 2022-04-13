@@ -2,6 +2,33 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "ILGPU/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "6.0.0",
+          "System.Memory": "4.5.4",
+          "System.Reflection.Metadata": "6.0.1",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "compile": {
+          "lib/net5.0/ILGPU.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/ILGPU.dll": {}
+        }
+      },
+      "ILGPU.Algorithms/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "ILGPU": "1.1.0"
+        },
+        "compile": {
+          "lib/net5.0/ILGPU.Algorithms.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/ILGPU.Algorithms.dll": {}
+        }
+      },
       "MathNet.Numerics/5.0.0": {
         "type": "package",
         "compile": {
@@ -9,6 +36,15 @@
         },
         "runtime": {
           "lib/net5.0/MathNet.Numerics.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
         }
       },
       "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -27,6 +63,35 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "SixLabors.ImageSharp/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        }
+      },
+      "System.Collections.Immutable/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
       "System.Drawing.Common/6.0.0": {
@@ -53,10 +118,108 @@
             "rid": "win"
           }
         }
+      },
+      "System.Memory/4.5.4": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.Reflection.Metadata/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Reflection.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reflection.Metadata.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Text.Encoding.CodePages/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
       }
     }
   },
   "libraries": {
+    "ILGPU/1.1.0": {
+      "sha512": "Ha4c/cvSVXI+BvZibqgs/7MXWFB1Ij1TSSDsZwCv3DYJJ/oQG4cXGoVqYxLF3Gr/rY+RAocIDitkzI64/T3nkg==",
+      "type": "package",
+      "path": "ilgpu/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE-3RD-PARTY.txt",
+        "LICENSE.txt",
+        "ilgpu.1.1.0.nupkg.sha512",
+        "ilgpu.nuspec",
+        "lib/net471/ILGPU.dll",
+        "lib/net471/ILGPU.pdb",
+        "lib/net471/ILGPU.xml",
+        "lib/net5.0/ILGPU.dll",
+        "lib/net5.0/ILGPU.xml",
+        "lib/net6.0/ILGPU.dll",
+        "lib/net6.0/ILGPU.xml",
+        "lib/netstandard2.1/ILGPU.dll",
+        "lib/netstandard2.1/ILGPU.xml"
+      ]
+    },
+    "ILGPU.Algorithms/1.1.0": {
+      "sha512": "tq8A5ecniKc3mhftBBo1G3tQPHszGJSdGhK10b2TIYiBgNUb9soHv1P73mZcu++cNi+7BatdaxSy4MotTCHt3A==",
+      "type": "package",
+      "path": "ilgpu.algorithms/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE-3RD-PARTY.txt",
+        "LICENSE.txt",
+        "ilgpu.algorithms.1.1.0.nupkg.sha512",
+        "ilgpu.algorithms.nuspec",
+        "lib/net471/ILGPU.Algorithms.dll",
+        "lib/net471/ILGPU.Algorithms.pdb",
+        "lib/net471/ILGPU.Algorithms.xml",
+        "lib/net5.0/ILGPU.Algorithms.dll",
+        "lib/net5.0/ILGPU.Algorithms.xml",
+        "lib/net6.0/ILGPU.Algorithms.dll",
+        "lib/net6.0/ILGPU.Algorithms.xml",
+        "lib/netstandard2.1/ILGPU.Algorithms.dll",
+        "lib/netstandard2.1/ILGPU.Algorithms.xml"
+      ]
+    },
     "MathNet.Numerics/5.0.0": {
       "sha512": "pg1W2VwaEQMAiTpGK840hZgzavnqjlCMTVSbtVCXVyT+7AX4mc1o89SPv4TBlAjhgCOo9c1Y+jZ5m3ti2YgGgA==",
       "type": "package",
@@ -77,6 +240,24 @@
         "lib/netstandard2.0/MathNet.Numerics.xml",
         "mathnet.numerics.5.0.0.nupkg.sha512",
         "mathnet.numerics.nuspec"
+      ]
+    },
+    "Microsoft.NETCore.Platforms/5.0.0": {
+      "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -105,6 +286,51 @@
         "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "SixLabors.ImageSharp/2.1.0": {
+      "sha512": "H8npUDq3VRagzRsJVxaNoUSMmD+kjAs7sR1Ip85eWbN5c0O1medMw/FiQ32dSNfWz/gVrc+xHs3es9SFlAiNBw==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/SixLabors.ImageSharp.dll",
+        "lib/net472/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.0/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.0/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.1/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.1/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.2.1.0.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
+      ]
+    },
+    "System.Collections.Immutable/6.0.0": {
+      "sha512": "l4zZJ1WU2hqpQQHXz1rvC3etVZN+2DLmQMO79FhOTZHMn8tDRr+WU287sbomD0BETlmKDn0ygUgVy9k5xkkJdA==",
+      "type": "package",
+      "path": "system.collections.immutable/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Collections.Immutable.dll",
+        "lib/net461/System.Collections.Immutable.xml",
+        "lib/net6.0/System.Collections.Immutable.dll",
+        "lib/net6.0/System.Collections.Immutable.xml",
+        "lib/netstandard2.0/System.Collections.Immutable.dll",
+        "lib/netstandard2.0/System.Collections.Immutable.xml",
+        "system.collections.immutable.6.0.0.nupkg.sha512",
+        "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -146,11 +372,126 @@
         "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "System.Memory/4.5.4": {
+      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "type": "package",
+      "path": "system.memory/4.5.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.4.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Reflection.Metadata/6.0.1": {
+      "sha512": "III/lNMSn0ZRBuM9m5Cgbiho5j81u0FAEagFX5ta2DKbljZ3T0IpD8j+BIiHQPeKqJppWS9bGEp6JnKnWKze0g==",
+      "type": "package",
+      "path": "system.reflection.metadata/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Reflection.Metadata.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Reflection.Metadata.dll",
+        "lib/net461/System.Reflection.Metadata.xml",
+        "lib/net6.0/System.Reflection.Metadata.dll",
+        "lib/net6.0/System.Reflection.Metadata.xml",
+        "lib/netstandard2.0/System.Reflection.Metadata.dll",
+        "lib/netstandard2.0/System.Reflection.Metadata.xml",
+        "system.reflection.metadata.6.0.1.nupkg.sha512",
+        "system.reflection.metadata.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Encoding.CodePages/5.0.0": {
+      "sha512": "NyscU59xX6Uo91qvhOs2Ccho3AR2TnZPomo1Z0K6YpyztBPM/A5VbkzOO19sy3A3i1TtEnTxA7bCe3Us+r5MWg==",
+      "type": "package",
+      "path": "system.text.encoding.codepages/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Text.Encoding.CodePages.dll",
+        "lib/net461/System.Text.Encoding.CodePages.dll",
+        "lib/net461/System.Text.Encoding.CodePages.xml",
+        "lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/win/lib/net461/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/net461/System.Text.Encoding.CodePages.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.xml",
+        "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
+        "system.text.encoding.codepages.5.0.0.nupkg.sha512",
+        "system.text.encoding.codepages.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "ILGPU >= 1.1.0",
+      "ILGPU.Algorithms >= 1.1.0",
       "MathNet.Numerics >= 5.0.0",
+      "SixLabors.ImageSharp >= 2.1.0",
       "System.Drawing.Common >= 6.0.0"
     ]
   },
@@ -193,9 +534,21 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "ILGPU": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
+          "ILGPU.Algorithms": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
           "MathNet.Numerics": {
             "target": "Package",
             "version": "[5.0.0, )"
+          },
+          "SixLabors.ImageSharp": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "System.Drawing.Common": {
             "target": "Package",
