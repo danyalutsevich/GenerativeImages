@@ -8,14 +8,32 @@
     ".NETCoreApp,Version=v5.0": {
       "GenerativeImages/1.0.0": {
         "dependencies": {
+          "CUDAfy.NET": "1.29.5576.13786",
           "ILGPU": "1.1.0",
           "ILGPU.Algorithms": "1.1.0",
           "MathNet.Numerics": "5.0.0",
           "SixLabors.ImageSharp": "2.1.0",
-          "System.Drawing.Common": "6.0.0"
+          "System.Drawing.Common": "6.0.0",
+          "Microsoft.DirectX.AudioVideoPlayback": "1.0.2902.0",
+          "Microsoft.DirectX.Diagnostics": "1.0.2902.0",
+          "Microsoft.DirectX.Direct3D": "1.0.2902.0",
+          "Microsoft.DirectX.Direct3DX": "1.0.2902.0",
+          "Microsoft.DirectX.DirectDraw": "1.0.2902.0",
+          "Microsoft.DirectX.DirectInput": "1.0.2902.0",
+          "Microsoft.DirectX.DirectPlay": "1.0.2902.0",
+          "Microsoft.DirectX.DirectSound": "1.0.2902.0",
+          "Microsoft.DirectX": "1.0.2902.0"
         },
         "runtime": {
           "GenerativeImages.dll": {}
+        }
+      },
+      "CUDAfy.NET/1.29.5576.13786": {
+        "runtime": {
+          "lib/net40/Cudafy.NET.dll": {
+            "assemblyVersion": "1.29.5576.13786",
+            "fileVersion": "1.29.5576.13786"
+          }
         }
       },
       "ILGPU/1.1.0": {
@@ -141,6 +159,78 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0"
         }
+      },
+      "Microsoft.DirectX.AudioVideoPlayback/1.0.2902.0": {
+        "runtime": {
+          "Microsoft.DirectX.AudioVideoPlayback.dll": {
+            "assemblyVersion": "1.0.2902.0",
+            "fileVersion": "5.4.0.2904"
+          }
+        }
+      },
+      "Microsoft.DirectX.Diagnostics/1.0.2902.0": {
+        "runtime": {
+          "Microsoft.DirectX.Diagnostics.dll": {
+            "assemblyVersion": "1.0.2902.0",
+            "fileVersion": "5.4.0.2904"
+          }
+        }
+      },
+      "Microsoft.DirectX.Direct3D/1.0.2902.0": {
+        "runtime": {
+          "Microsoft.DirectX.Direct3D.dll": {
+            "assemblyVersion": "1.0.2902.0",
+            "fileVersion": "9.5.132.0"
+          }
+        }
+      },
+      "Microsoft.DirectX.Direct3DX/1.0.2902.0": {
+        "runtime": {
+          "Microsoft.DirectX.Direct3DX.dll": {
+            "assemblyVersion": "1.0.2902.0",
+            "fileVersion": "5.4.0.3900"
+          }
+        }
+      },
+      "Microsoft.DirectX.DirectDraw/1.0.2902.0": {
+        "runtime": {
+          "Microsoft.DirectX.DirectDraw.dll": {
+            "assemblyVersion": "1.0.2902.0",
+            "fileVersion": "5.4.0.2904"
+          }
+        }
+      },
+      "Microsoft.DirectX.DirectInput/1.0.2902.0": {
+        "runtime": {
+          "Microsoft.DirectX.DirectInput.dll": {
+            "assemblyVersion": "1.0.2902.0",
+            "fileVersion": "5.4.0.2904"
+          }
+        }
+      },
+      "Microsoft.DirectX.DirectPlay/1.0.2902.0": {
+        "runtime": {
+          "Microsoft.DirectX.DirectPlay.dll": {
+            "assemblyVersion": "1.0.2902.0",
+            "fileVersion": "5.4.0.2904"
+          }
+        }
+      },
+      "Microsoft.DirectX.DirectSound/1.0.2902.0": {
+        "runtime": {
+          "Microsoft.DirectX.DirectSound.dll": {
+            "assemblyVersion": "1.0.2902.0",
+            "fileVersion": "5.4.0.2904"
+          }
+        }
+      },
+      "Microsoft.DirectX/1.0.2902.0": {
+        "runtime": {
+          "Microsoft.DirectX.dll": {
+            "assemblyVersion": "1.0.2902.0",
+            "fileVersion": "5.4.0.2904"
+          }
+        }
       }
     }
   },
@@ -149,6 +239,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CUDAfy.NET/1.29.5576.13786": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jrEKZd3qfSqGHWBcLh/+erXKUTrtJwHcRPHGKILFCNIbmSSUypwrGyG88fr1pSqfbB7pUlzqkOBcvK26KWCz2w==",
+      "path": "cudafy.net/1.29.5576.13786",
+      "hashPath": "cudafy.net.1.29.5576.13786.nupkg.sha512"
     },
     "ILGPU/1.1.0": {
       "type": "package",
@@ -233,6 +330,51 @@
       "sha512": "sha512-NyscU59xX6Uo91qvhOs2Ccho3AR2TnZPomo1Z0K6YpyztBPM/A5VbkzOO19sy3A3i1TtEnTxA7bCe3Us+r5MWg==",
       "path": "system.text.encoding.codepages/5.0.0",
       "hashPath": "system.text.encoding.codepages.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.DirectX.AudioVideoPlayback/1.0.2902.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.DirectX.Diagnostics/1.0.2902.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.DirectX.Direct3D/1.0.2902.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.DirectX.Direct3DX/1.0.2902.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.DirectX.DirectDraw/1.0.2902.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.DirectX.DirectInput/1.0.2902.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.DirectX.DirectPlay/1.0.2902.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.DirectX.DirectSound/1.0.2902.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.DirectX/1.0.2902.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

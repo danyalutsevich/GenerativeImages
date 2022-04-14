@@ -13,6 +13,11 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using Color = System.Drawing.Color;
 
+using Cudafy;
+using Cudafy.Translator;
+using Cudafy.Host;
+using Image = SixLabors.ImageSharp.Image;
+
 namespace GenerativeImages
 {
     internal class Program
@@ -39,9 +44,9 @@ namespace GenerativeImages
 
             Stopwatch stopwatch = Stopwatch.StartNew();
 
-            GenIm.GenerateImagesPaths(100);
-            await GenIm.GenerateImages();
-            Console.WriteLine($"Done in {stopwatch.ElapsedMilliseconds}");
+            //GenIm.GenerateImagesPaths(100);
+            //await GenIm.GenerateImages();
+            //Console.WriteLine($"Done in {stopwatch.ElapsedMilliseconds}");
 
             //GenIm.ArciveImages();
 
@@ -138,35 +143,6 @@ namespace GenerativeImages
             Console.ResetColor();
         }
     
-        private async Task ImageSharpTest(List<string> l,int imageName)
-        {
-            await Task.Run(() =>
-            {
-                SixLabors.ImageSharp.Image<Rgba32> image = SixLabors.ImageSharp.Image.Load<Rgba32>(l[0]);
-
-                foreach (var s in l)
-                {
-                    var part = SixLabors.ImageSharp.Image.Load<Rgba32>(s);
-
-                    for (int x = 0; x < part.Width; x++)
-                    {
-                        for (int y = 0; y < part.Height; y++)
-                        {
-                            Rgba32 color = part[x, y];
-                            if (color.A != 0)
-                            {
-                                image[x, y] = color;
-                            }
-                        }
-                    }
-
-                }
-
-                image.SaveAsPng($"{CurrentDir}\\Output\\{imageName}.png");
-
-            });
-        }
-
         private async Task GenerateImage(List<string> l, int imageName)
         {
             await Task.Run(() =>
@@ -196,6 +172,35 @@ namespace GenerativeImages
             });
         }
 
+        private async Task ImageSharpTest(List<string> l,int imageName)
+        {
+            await Task.Run(() =>
+            {
+                SixLabors.ImageSharp.Image<Rgba32> image = SixLabors.ImageSharp.Image.Load<Rgba32>(l[0]);
+                //image.
+                foreach (var s in l)
+                {
+                    var part = SixLabors.ImageSharp.Image.Load<Rgba32>(s);
+
+                    for (int x = 0; x < part.Width; x++)
+                    {
+                        for (int y = 0; y < part.Height; y++)
+                        {
+                            Rgba32 color = part[x, y];
+                            if (color.A != 0)
+                            {
+                                image[x, y] = color;
+                            }
+                        }
+                    }
+
+                }
+
+                image.SaveAsPng($"{CurrentDir}\\Output\\{imageName}.png");
+
+            });
+        }
+
         private void ArciveImages()
         {
             int prefix = 0;
@@ -213,6 +218,73 @@ namespace GenerativeImages
                 }
             } while (true);
         }
+
+        private void CUDAfyTest(List<string> l, int imageName)
+        {
+
+            CudafyModule km = CudafyTranslator.Cudafy();
+
+            GPGPU gpu = CudafyHost.GetDevice(CudafyModes.Target,CudafyModes.DeviceId);
+
+            gpu.LoadModule(km);
+
+
+            Image<Rgba32> image = Image.Load<Rgba32>(l[0]);
+
+
+
+            foreach (var s in l)
+            {
+                var part = SixLabors.ImageSharp.Image.Load<Rgba32>(s);
+
+                gpu.Allocate<Rgba32>(part.Width, part.Height);
+
+                Rgba32[,] colorArray = new Rgba32[part.Width, part.Height];
+                
+                //for(int i = 0; i < part.Width; i++)
+                //{
+                //    colorArray[i]=new Rgba32[part.Height];
+                //}
+
+                
+                for(int i = 0; i < part.Width; i++)
+                {
+                    for(int j = 0; j < part.Height; j++)
+                    {
+                        colorArray[i,j] = part[i, j];
+                    }
+                }
+                
+                Rgba32[,] devColor = gpu.Allocate<Rgba32>(part.Width, part.Height);
+
+                gpu.CopyToDevice(colorArray, devColor);
+
+                
+
+                for (int x = 0; x < part.Width; x++)
+                {
+                    for (int y = 0; y < part.Height; y++)
+                    {
+                        Rgba32 color = part[x, y];
+                        if (color.A != 0)
+                        {
+                            image[x, y] = color;
+                        }
+                    }
+                }
+
+            }
+
+            //gpu.Allocate<SixLabors.ImageSharp.Image>()
+
+
+
+
+
+        }
+
+
+
     }
 
 

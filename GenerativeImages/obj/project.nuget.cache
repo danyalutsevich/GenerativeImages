@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wrlFL7KRQYxby8yt3XxQiVOSmctWbx2rIILKj0bN6yL3pi0CLWjOIW1Vb48iX+z5n8bhS6PNH9D84oGIKEt//Q==",
+  "dgSpecHash": "bf52eC3fUzLnRaSNUf7svcbCCMInvCa5ZH40JfjEq7ajs3tLwmOOGMbAwB3xZdDj2r/SJHK8Dxxyz7RtqS9xRQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\luche\\source\\repos\\C#\\GenerativeImages\\GenerativeImages\\GenerativeImages.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\luche\\.nuget\\packages\\cudafy.net\\1.29.5576.13786\\cudafy.net.1.29.5576.13786.nupkg.sha512",
     "C:\\Users\\luche\\.nuget\\packages\\ilgpu\\1.1.0\\ilgpu.1.1.0.nupkg.sha512",
     "C:\\Users\\luche\\.nuget\\packages\\ilgpu.algorithms\\1.1.0\\ilgpu.algorithms.1.1.0.nupkg.sha512",
     "C:\\Users\\luche\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
@@ -17,5 +18,16 @@
     "C:\\Users\\luche\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\luche\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'CUDAfy.NET 1.29.5576.13786' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "CUDAfy.NET",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

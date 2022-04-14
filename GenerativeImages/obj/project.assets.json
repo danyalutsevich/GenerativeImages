@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "CUDAfy.NET/1.29.5576.13786": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Cudafy.NET.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Cudafy.NET.dll": {}
+        }
+      },
       "ILGPU/1.1.0": {
         "type": "package",
         "dependencies": {
@@ -176,6 +185,27 @@
     }
   },
   "libraries": {
+    "CUDAfy.NET/1.29.5576.13786": {
+      "sha512": "jrEKZd3qfSqGHWBcLh/+erXKUTrtJwHcRPHGKILFCNIbmSSUypwrGyG88fr1pSqfbB7pUlzqkOBcvK26KWCz2w==",
+      "type": "package",
+      "path": "cudafy.net/1.29.5576.13786",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Readme/CUDA.NET.Readme.txt",
+        "content/Readme/CUDAfy-License.txt",
+        "content/Readme/ILSpy-license.txt",
+        "content/Readme/README.txt",
+        "content/Readme/example_source_code.cs.txt",
+        "content/Tools/CudafyViewer.exe",
+        "content/Tools/cudafycl.exe",
+        "content/Tools/place_these_executables_in_same_folder_as_Cudafy.NET.dll_",
+        "cudafy.net.1.29.5576.13786.nupkg.sha512",
+        "cudafy.net.nuspec",
+        "lib/net40/Cudafy.NET.dll",
+        "lib/net40/Cudafy.NET.xml"
+      ]
+    },
     "ILGPU/1.1.0": {
       "sha512": "Ha4c/cvSVXI+BvZibqgs/7MXWFB1Ij1TSSDsZwCv3DYJJ/oQG4cXGoVqYxLF3Gr/rY+RAocIDitkzI64/T3nkg==",
       "type": "package",
@@ -488,6 +518,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "CUDAfy.NET >= 1.29.5576.13786",
       "ILGPU >= 1.1.0",
       "ILGPU.Algorithms >= 1.1.0",
       "MathNet.Numerics >= 5.0.0",
@@ -534,6 +565,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "CUDAfy.NET": {
+            "target": "Package",
+            "version": "[1.29.5576.13786, )"
+          },
           "ILGPU": {
             "target": "Package",
             "version": "[1.1.0, )"
@@ -573,5 +608,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'CUDAfy.NET 1.29.5576.13786' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "CUDAfy.NET",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
