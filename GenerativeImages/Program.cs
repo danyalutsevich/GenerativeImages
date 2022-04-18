@@ -20,7 +20,7 @@ using Image = SixLabors.ImageSharp.Image;
 
 namespace GenerativeImages
 {
-    internal class Program
+    internal class ImageGenerator
     {
         public List<List<string>> imagesPaths;
         public List<string> imageNames;
@@ -29,7 +29,7 @@ namespace GenerativeImages
         private SemaphoreSlim semaphore;
         int imageName = 0;
 
-        public Program()
+        public ImageGenerator()
         {
             imagesPaths = new List<List<string>>();
             imageNames = new List<string>();
@@ -38,19 +38,16 @@ namespace GenerativeImages
             semaphore = new SemaphoreSlim(1);
         }
 
+        // Usually generating images with ImageSharp is 5 times faster then System.Drawing.Bitmap
+
         static async Task Main()
         {
-            var GenIm = new Program();
+            var GenIm = new ImageGenerator();
 
-            Stopwatch stopwatch = Stopwatch.StartNew();
+            GenIm.GenerateImagesPaths(100);
+            await GenIm.GenerateImages();
 
-            //GenIm.GenerateImagesPaths(100);
-            //await GenIm.GenerateImages();
-            //Console.WriteLine($"Done in {stopwatch.ElapsedMilliseconds}");
-
-            //GenIm.ArciveImages();
-
-            stopwatch.Stop();
+            GenIm.ArciveImages();
 
         }
         
@@ -133,7 +130,7 @@ namespace GenerativeImages
             {
                 imageName++;
                 //tasks.Add(GenerateImage(l, imageName));
-                tasks.Add(ImageSharpTest(l, imageName));
+                tasks.Add(ImageSharpGenerator(l, imageName));
             }
 
             Task.WaitAll(tasks.ToArray());
@@ -143,7 +140,7 @@ namespace GenerativeImages
             Console.ResetColor();
         }
     
-        private async Task GenerateImage(List<string> l, int imageName)
+        private async Task BitmapImageGenerator(List<string> l, int imageName)
         {
             await Task.Run(() =>
             {
@@ -172,12 +169,11 @@ namespace GenerativeImages
             });
         }
 
-        private async Task ImageSharpTest(List<string> l,int imageName)
+        private async Task ImageSharpGenerator(List<string> l,int imageName)
         {
             await Task.Run(() =>
             {
                 SixLabors.ImageSharp.Image<Rgba32> image = SixLabors.ImageSharp.Image.Load<Rgba32>(l[0]);
-                //image.
                 foreach (var s in l)
                 {
                     var part = SixLabors.ImageSharp.Image.Load<Rgba32>(s);
@@ -219,6 +215,8 @@ namespace GenerativeImages
             } while (true);
         }
 
+
+        // To be continued ...
         private void CUDAfyTest(List<string> l, int imageName)
         {
 
