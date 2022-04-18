@@ -26,7 +26,6 @@ namespace GenerativeImages
         public List<string> imageNames;
         public Random random;
         public string CurrentDir;
-        private SemaphoreSlim semaphore;
         int imageName = 0;
 
         public ImageGenerator()
@@ -35,7 +34,6 @@ namespace GenerativeImages
             imageNames = new List<string>();
             random = new Random();
             CurrentDir = Directory.GetCurrentDirectory();
-            semaphore = new SemaphoreSlim(1);
         }
 
         // Usually generating images with ImageSharp is 5 times faster then System.Drawing.Bitmap
